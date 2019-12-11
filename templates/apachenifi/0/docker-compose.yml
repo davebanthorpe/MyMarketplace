@@ -9,7 +9,7 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
       
   nifi:
-    image: apache/nifi:latest
+    image: 'apache/nifi:latest'
     ports:
       - 8080 # Unsecured HTTP Web Port
     environment:
