@@ -1,0 +1,4 @@
+.catalog:
+  name: Influx TICK
+  version: latest
+  uuid: influxtick-0
