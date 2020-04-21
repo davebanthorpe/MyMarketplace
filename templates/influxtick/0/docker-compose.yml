@@ -1,0 +1,45 @@
+version: '3'
+services:
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    ports:
+      # The API for InfluxDB is served on port 8086
+      - "8086:8086"
+      - "8082:8082"
+    environment:
+      - INFLUXDB_DB=influxdb
+      - INFLUXDB_ADMIN_USER=telegraf
+      - INFLUXDB_ADMIN_PASSWORD=telegraf
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    ports:
+      - "8092:8092/udp"
+      - "8094:8094"
+      - "8125:8125/udp"
+  chronograf:
+    image: chronograf:latest
+    container_name: chronograf
+    ports:
+      # The WebUI for Chronograf is served on port 8888
+      - "8888:8888"
+    depends_on:
+      - influxdb
+  kapacitor:
+    image: kapacitor:latest
+    container_name: kapacitor
+    ports:
+      # The WebUI for Chronograf is served on port 8888
+      - "9092:9092"
+    environment:
+      - KAPACITOR_HOSTNAME=kapacitor
+      - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
+    depends_on:
+      - influxdb
+  influxdb20:
+    image: 'quay.io/influxdb/influxdb:2.0.0-beta'
+    container_name: influxdb20
+    ports:
+      # The API & WebUI for InfluxDB_V2 is served on port 9999
+      - "9999:9999"
