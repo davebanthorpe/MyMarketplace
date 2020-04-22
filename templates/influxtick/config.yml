@@ -1,4 +1,4 @@
-name: Influx TICK
-description: Influx TICK stack
-category: Programming
+name: InfluxTICK
+description: Database
+category: Utils
 version: 1.0.0
