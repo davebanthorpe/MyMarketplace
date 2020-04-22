@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   influxdb:
     image: influxdb:latest
@@ -38,7 +38,7 @@ services:
     depends_on:
       - influxdb
   influxdb20:
-    image: 'quay.io/influxdb/influxdb:2.0.0-beta'
+    image: "quay.io/influxdb/influxdb:2.0.0-beta"
     container_name: influxdb20
     ports:
       # The API & WebUI for InfluxDB_V2 is served on port 9999
