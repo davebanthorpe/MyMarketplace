@@ -6,7 +6,7 @@ services:
     container_name: influxdb
     ports:
       # The API for InfluxDB is served on port 8086
-      - ${INFLUX_PORT}:8086
+      - "${INFLUX_PORT}:8086"
       - "8082:8082"
     environment:
       - INFLUXDB_DB=influxdb
@@ -26,7 +26,7 @@ services:
     container_name: chronograf
     ports:
       # The WebUI for Chronograf is served on port 8888
-      - ${CHRONOGRAF_PORT}:8888
+      - "${CHRONOGRAF_PORT}:8888"
     depends_on:
       - influxdb
       
@@ -35,7 +35,7 @@ services:
     container_name: kapacitor
     ports:
       # The WebUI for Chronograf is served on port 8888
-      - ${KAPACITOR_PORT}:9092
+      - "${KAPACITOR_PORT}:9092"
     environment:
       - KAPACITOR_HOSTNAME=kapacitor
       - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
