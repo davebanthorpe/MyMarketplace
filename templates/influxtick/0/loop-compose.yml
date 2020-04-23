@@ -4,19 +4,19 @@
   uuid: influxtick-0
   questions:
   - variable: INFLUX_PORT
-    description: 'Influx exposed port'
+    description: 'Specify external port for Influx'
     label: 'Port:'
     required: true
     default: 8088
     type: int
   - variable: CHRONOGRAF_PORT
-    description: 'Chronograf exposed port'
+    description: 'Specify external port for Chronograf'
     label: 'Port:'
     required: true
     default: 8888
     type: int
   - variable: KAPACITOR_PORT
-    description: 'Kapacitor exposed port'
+    description: 'Specify external port for Kapacitor'
     label: 'Port:'
     required: true
     default: 9092
