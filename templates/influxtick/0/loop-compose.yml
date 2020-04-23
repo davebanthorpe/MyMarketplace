@@ -3,21 +3,21 @@
   version: latest
   uuid: influxtick-0
 questions:
-  - variable: INFLUX_PORT
-    description: 'Influx exposed port'
-    label: 'Port:'
-    required: true
-    default: 8086
-    type: int
-  - variable: CHRONOGRAF_PORT
-    description: 'Chronograf exposed port'
-    label: 'Port:'
-    required: true
-    default: 8888
-    type: int
- - variable: KAPACITOR_PORT
-    description: 'Kapacitor exposed port'
-    label: 'Port:'
-    required: true
-    default: 9092
-    type: int
+- variable: INFLUX_PORT
+  description: 'Influx exposed port'
+  label: 'Port:'
+  required: true
+  default: 8086
+  type: int
+- variable: CHRONOGRAF_PORT
+  description: 'Chronograf exposed port'
+  label: 'Port:'
+  required: true
+  default: 8888
+  type: int
+- variable: KAPACITOR_PORT
+  description: 'Kapacitor exposed port'
+  label: 'Port:'
+  required: true
+  default: 9092
+  type: int
