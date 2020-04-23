@@ -7,7 +7,7 @@
     description: 'Influx exposed port'
     label: 'Port:'
     required: true
-    default: 8086
+    default: 8088
     type: int
   - variable: CHRONOGRAF_PORT
     description: 'Chronograf exposed port'
