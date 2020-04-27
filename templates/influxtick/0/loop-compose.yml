@@ -3,19 +3,43 @@
   version: latest
   uuid: influxtick-0
   questions:
-  - variable: INFLUX_PORT
+  - variable: INFLUX_PORT_1
     description: 'Specify external port for Influx'
     label: 'Port:'
     required: true
     default: 8088
     type: int
-  - variable: CHRONOGRAF_PORT
+  - variable: INFLUX_PORT_2
+    description: 'Specify external port for Influx'
+    label: 'Port:'
+    required: true
+    default: 8082
+    type: int 
+  - variable: TELEGRAF_PORT_1
+    description: 'Specify external port for Telegraf'
+    label: 'Port:'
+    required: true
+    default: 8092
+    type: int
+  - variable: TELEGRAF_PORT_2
+    description: 'Specify external port for Telegraf'
+    label: 'Port:'
+    required: true
+    default: 8094
+    type: int       
+  - variable: TELEGRAF_PORT_2
+    description: 'Specify external port for Telegraf'
+    label: 'Port:'
+    required: true
+    default: 8125
+    type: int      
+  - variable: CHRONOGRAF_PORT_1
     description: 'Specify external port for Chronograf'
     label: 'Port:'
     required: true
     default: 8888
     type: int
-  - variable: KAPACITOR_PORT
+  - variable: KAPACITOR_PORT_1
     description: 'Specify external port for Kapacitor'
     label: 'Port:'
     required: true
