@@ -7,43 +7,43 @@
     description: 'Specify external port for Influx'
     label: 'Port:'
     required: true
-    default: 8088
+    default: 41250
     type: int
   - variable: INFLUX_PORT_2
     description: 'Specify external port for Influx'
     label: 'Port:'
     required: true
-    default: 8082
+    default: 41251
     type: int 
   - variable: TELEGRAF_PORT_1
     description: 'Specify external port for Telegraf'
     label: 'Port:'
     required: true
-    default: 8092
+    default: 41252
     type: int
   - variable: TELEGRAF_PORT_2
     description: 'Specify external port for Telegraf'
     label: 'Port:'
     required: true
-    default: 8094
+    default: 41253
     type: int       
-  - variable: TELEGRAF_PORT_2
+  - variable: TELEGRAF_PORT_3
     description: 'Specify external port for Telegraf'
     label: 'Port:'
     required: true
-    default: 8125
+    default: 41254
     type: int      
   - variable: CHRONOGRAF_PORT_1
     description: 'Specify external port for Chronograf'
     label: 'Port:'
     required: true
-    default: 8888
+    default: 41255
     type: int
   - variable: KAPACITOR_PORT_1
     description: 'Specify external port for Kapacitor'
     label: 'Port:'
     required: true
-    default: 9092
+    default: 41256
     type: int
     
     
