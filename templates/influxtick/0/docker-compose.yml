@@ -6,8 +6,8 @@ services:
     container_name: influxdb
     ports:
       # The API for InfluxDB is served on port 8086
-      - "${INFLUX_PORT}:8086"
-      - "8082:8082"
+      - "${INFLUX_PORT_1}:8086"
+      - "${INFLUX_PORT_2}:8082"
     environment:
       - INFLUXDB_DB=influxdb
       - INFLUXDB_ADMIN_USER=telegraf
@@ -17,16 +17,16 @@ services:
     image: telegraf:latest
     container_name: telegraf
     ports:
-      - "8092:8092/udp"
-      - "8094:8094"
-      - "8125:8125/udp"
+      - "${TELEGRAF_PORT_1}:8092/udp"
+      - "${TELEGRAF_PORT_2}:8094"
+      - "${TELEGRAF_PORT_3}:8125/udp"
       
   chronograf:
     image: chronograf:latest
     container_name: chronograf
     ports:
       # The WebUI for Chronograf is served on port 8888
-      - "${CHRONOGRAF_PORT}:8888"
+      - "${CHRONOGRAF_PORT_1}:8888"
     depends_on:
       - influxdb
       
@@ -35,7 +35,7 @@ services:
     container_name: kapacitor
     ports:
       # The WebUI for Chronograf is served on port 8888
-      - "${KAPACITOR_PORT}:9092"
+      - "${KAPACITOR_PORT_1}:9092"
     environment:
       - KAPACITOR_HOSTNAME=kapacitor
       - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
