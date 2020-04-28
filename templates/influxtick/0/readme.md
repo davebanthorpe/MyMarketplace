@@ -1,5 +1,4 @@
 This is the default install script.
 Provide the ports to be externally exposed for InfluxDB, Chronograf and Kapacitor.
 
-
-******** Do NOT use the default InfluxDB port of 8086 - this is already in use by OTLink and will result in an error being thrown. The default for this script is 8088.
+The default ports listed are recommended as these are already within the allowed port range set by OTLink and will not conflict with existing OTLink services.
