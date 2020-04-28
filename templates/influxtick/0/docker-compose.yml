@@ -28,7 +28,7 @@ services:
       - INFLUX_PASSWORD=${INFLUX_ADMIN_PASSWORD}
       - INFLUX_URL=http://influxdb:8086
       - INFLUX_SKIP_DATABASE_CREATION=false
-      - INFLUX_DATABASE=telegraf
+      - TELEGRAF_INFLUX_DATABASE=telegraf
       
   chronograf:
     image: chronograf:latest
