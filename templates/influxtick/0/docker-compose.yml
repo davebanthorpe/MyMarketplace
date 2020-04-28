@@ -27,6 +27,11 @@ services:
     ports:
       # The WebUI for Chronograf is served on port 8888
       - "${CHRONOGRAF_PORT_1}:8888"
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_USERNAME=otlink
+      - INFLUXDB_PASSWORD=${DB_PASSWORD}
+      - KAPACITOR_URL=http://kapacitor:9092
     depends_on:
       - influxdb
       
