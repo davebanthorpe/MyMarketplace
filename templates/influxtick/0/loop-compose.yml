@@ -9,6 +9,12 @@
     required: true
     default: password
     type: string
+ - variable: INFLUX_ADMIN_PASSWORD
+    description: 'Specify the password for the Influx admin user.'
+    label: 'Password:'
+    required: true
+    default: password
+    type: string    
   - variable: INFLUX_PORT_1
     description: 'Specify the external port that runs the InfluxDB HTTP service.'
     label: 'Port:'
