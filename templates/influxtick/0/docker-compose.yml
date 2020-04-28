@@ -52,7 +52,7 @@ services:
       - "${KAPACITOR_PORT_1}:9092"
     environment:
       - KAPACITOR_HOSTNAME=kapacitor
-      - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
+      - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdbx:8086
       - KAPACTIOR_INFLUXDB_0_USERNAME=influxadmin
       - KAPACITOR_INFLUXDB_0_PASSWORD=${INFLUX_ADMIN_PASSWORD}
     depends_on:
