@@ -24,11 +24,11 @@ services:
       - "${TELEGRAF_PORT_2}:8094"
       - "${TELEGRAF_PORT_3}:8125/udp"
     environment:
-      - INFLUXDB_USERNAME=influxadmin
-      - INFLUXDB_PASSWORD=${INFLUX_ADMIN_PASSWORD}
-      - INFLUXDB_URL=http://influxdb:8086
-      - INFLUXDB_SKIP_DATABASE_CREATION=false
-      - INFLUXDB_DATABASE=telegraf
+      - INFLUX_USERNAME=influxadmin
+      - INFLUX_PASSWORD=${INFLUX_ADMIN_PASSWORD}
+      - INFLUX_URL=http://influxdb:8086
+      - INFLUX_SKIP_DATABASE_CREATION=false
+      - INFLUX_DATABASE=telegraf
       
   chronograf:
     image: chronograf:latest
