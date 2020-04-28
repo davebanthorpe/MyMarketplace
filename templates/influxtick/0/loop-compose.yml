@@ -3,44 +3,50 @@
   version: latest
   uuid: influxtick-0
   questions:
+  - variable: DB_PASSWORD
+    description: 'Specify the password for the OTLink streaming database.'
+    label: 'Password:'
+    required: true
+    default: password
+    type: string
   - variable: INFLUX_PORT_1
-    description: 'Specify external port that runs the InfluxDB HTTP service.'
+    description: 'Specify the external port that runs the InfluxDB HTTP service.'
     label: 'Port:'
     required: true
     default: 41250
     type: int
   - variable: INFLUX_PORT_2
-    description: 'Specify external port that runs the UDP service.'
+    description: 'Specify the external port that runs the UDP service.'
     label: 'Port:'
     required: true
     default: 41251
     type: int 
   - variable: TELEGRAF_PORT_1
-    description: 'Specify external port for Telegraf TCP listener.'
+    description: 'Specify the external port for Telegraf TCP listener.'
     label: 'Port:'
     required: true
     default: 41252
     type: int
   - variable: TELEGRAF_PORT_2
-    description: 'Specify external port for Telegraf UDP listener.'
+    description: 'Specify the external port for Telegraf UDP listener.'
     label: 'Port:'
     required: true
     default: 41253
     type: int       
   - variable: TELEGRAF_PORT_3
-    description: 'Specify external port for Telegraf statsd UDP/TCP listener.'
+    description: 'Specify the external port for Telegraf statsd UDP/TCP listener.'
     label: 'Port:'
     required: true
     default: 41254
     type: int      
   - variable: CHRONOGRAF_PORT_1
-    description: 'Specify external port that runs the Chronograf web UI.'
+    description: 'Specify the external port that runs the Chronograf web UI.'
     label: 'Port:'
     required: true
     default: 41255
     type: int
   - variable: KAPACITOR_PORT_1
-    description: 'Specify external port that runs the Kapacitor an HTTP API service.'
+    description: 'Specify the external port that runs the Kapacitor an HTTP API service.'
     label: 'Port:'
     required: true
     default: 41256
