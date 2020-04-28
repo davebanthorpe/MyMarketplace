@@ -20,6 +20,9 @@ services:
       - "${TELEGRAF_PORT_1}:8092/udp"
       - "${TELEGRAF_PORT_2}:8094"
       - "${TELEGRAF_PORT_3}:8125/udp"
+    environment:
+      - ${INFLUX_USERNAME}=otlink
+      - ${INFLUX_PASSWORD}=${DB_PASSWORD}
       
   chronograf:
     image: chronograf:latest
