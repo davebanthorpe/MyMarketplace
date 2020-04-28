@@ -53,7 +53,7 @@ services:
     environment:
       - KAPACITOR_HOSTNAME=kapacitor
       - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
-      - KAPACTIOR_INFLUXDB_USERNAME=influxadmin
-      - KAPACITOR_INFLUXDB_PASSWORD=${INFLUX_ADMIN_PASSWORD}
+      - KAPACTIOR_INFLUXDB_0_USERNAME=influxadmin
+      - KAPACITOR_INFLUXDB_0_PASSWORD=${INFLUX_ADMIN_PASSWORD}
     depends_on:
       - influxdb
