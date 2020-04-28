@@ -21,8 +21,8 @@ services:
       - "${TELEGRAF_PORT_2}:8094"
       - "${TELEGRAF_PORT_3}:8125/udp"
     environment:
-      - INFLUXDB_USERNAME=otlink
-      - INFLUXDB_PASSWORD=${DB_PASSWORD}
+      - INFLUX_USERNAME="otlink"
+      - INFLUX_PASSWORD="${DB_PASSWORD}"
       
   chronograf:
     image: chronograf:latest
