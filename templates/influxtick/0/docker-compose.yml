@@ -9,9 +9,9 @@ services:
       - "${INFLUX_PORT_1}:8086"
       - "${INFLUX_PORT_2}:8082"
     environment:
-      - INFLUXDB_DB=influxdb
-      - INFLUXDB_ADMIN_USER=telegraf
-      - INFLUXDB_ADMIN_PASSWORD=telegraf
+      - INFLUXDB_DB=otlink
+      - INFLUXDB_ADMIN_USER=otlink
+      - INFLUXDB_ADMIN_PASSWORD=${DB_PASSWORD}
       
   telegraf:
     image: telegraf:latest
