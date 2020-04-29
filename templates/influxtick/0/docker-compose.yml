@@ -27,6 +27,7 @@ services:
       - INFLUX_USERNAME=influxadmin
       - INFLUX_PASSWORD=${INFLUX_ADMIN_PASSWORD}
       - INFLUX_URL=http://influxdb:8086 
+      
   chronograf:
     image: chronograf:latest
     container_name: chronograf
