@@ -27,6 +27,14 @@ services:
       - INFLUX_USERNAME=influxadmin
       - INFLUX_PASSWORD=${INFLUX_ADMIN_PASSWORD}
       - INFLUX_URL=http://influxdb:8086 
+      - HOST_PROC=/rootfs/proc
+      - HOST_SYS=/rootfs/sys
+      - HOST_ETC=/rootfs/etc
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /sys:/rootfs/sys:ro
+      - /proc:/rootfs/proc:ro
+      - /etc:/rootfs/etc:ro      
       
   chronograf:
     image: chronograf:latest
