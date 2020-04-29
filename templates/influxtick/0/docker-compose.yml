@@ -39,7 +39,6 @@ services:
       - INFLUXDB_USERNAME=influxadmin
       - INFLUXDB_PASSWORD=${INFLUX_ADMIN_PASSWORD}
       - KAPACITOR_URL=http://kapacitor:9092
-      - TOKEN_SECRET=testingsecret
     depends_on:
       - influxdb
       
