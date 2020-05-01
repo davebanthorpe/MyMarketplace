@@ -67,6 +67,7 @@ services:
       
   postgres:
     image: postgres:9.6.5
+    container_name: postgres
     restart: "always"
     environment:
       - POSTGRES_DB=hydra
