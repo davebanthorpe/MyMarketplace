@@ -66,7 +66,7 @@ services:
       - influxdb
       
   postgres:
-	  image: postgres:9.6.5
+  	image: postgres:9.6.5
 	  container_name: postgres
 	  restart: "${RESTART}"
 	  environment:
@@ -78,10 +78,6 @@ services:
 	  volumes:
 	    - postgres-vol:/var/lib/postgresql/data
 	  network_mode: bridge
-
-	  volumes:
-	    postgres-vol:
-		  driver: local
 	  
   hydra:
 	  image: oryd/hydra:1.4.8
@@ -95,3 +91,7 @@ services:
 	  ports:
 	    - 9000:4444
 	    - 9001:4445
+			
+volumes:
+	postgres-vol:
+	driver: local
