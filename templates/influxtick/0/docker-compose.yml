@@ -72,4 +72,4 @@ services:
     image: nginx
     container_name: nginx
     ports:
-      - "41257:80"      
+      - "${NGINX_PORT_1}:80"      
