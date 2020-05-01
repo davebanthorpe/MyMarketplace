@@ -71,5 +71,6 @@ services:
   nginx:
     image: nginx
     container_name: nginx
+    command: bash -c "apt-get update && apt-get install -y apache2-utils"
     ports:
       - "${NGINX_PORT_1}:80"      
