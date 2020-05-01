@@ -68,7 +68,8 @@ services:
     depends_on:
       - influxdb
       
-  web:
+  nginx:
     image: nginx
+    container_name: nginx
     ports:
       - "41257:80"      
