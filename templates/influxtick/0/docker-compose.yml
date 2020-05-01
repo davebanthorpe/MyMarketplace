@@ -78,6 +78,21 @@ services:
     volumes:
       - postgres-vol:/var/lib/postgresql/data
     network_mode: bridge
+    
+  hydra:
+    image: oryd/hydra:1.4.8
+    container_name: hydra
+    environment:
+      - DSN=postgres://hydrauser:hydrapassword@postgres:5432/hydra?sslmode=disable
+      - SECRETS_SYSTEM=hydrasecret123456
+      - URLS_SELF_ISSUER=https://localhost:9000/
+      - URLS_CONSENT=http://localhost:9020/consent
+      - URLS_LOGIN=http://localhost:9020/login
+    ports:
+      - 9000:4444
+      - 9001:4445
+    depends_on:
+      - postgres
 
 volumes:
   postgres-vol:
