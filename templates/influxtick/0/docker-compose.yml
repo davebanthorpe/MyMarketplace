@@ -47,6 +47,7 @@ services:
       - INFLUXDB_USERNAME=influxadmin
       - INFLUXDB_PASSWORD=${INFLUX_ADMIN_PASSWORD}
       - KAPACITOR_URL=http://kapacitor:9092
+      - AUTH_DURATION=0
     depends_on:
       - influxdb
       
