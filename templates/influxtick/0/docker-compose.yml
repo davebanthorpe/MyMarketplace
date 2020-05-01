@@ -67,3 +67,8 @@ services:
       - KAPACITOR_INFLUXDB_0_PASSWORD=${INFLUX_ADMIN_PASSWORD}
     depends_on:
       - influxdb
+      
+  web:
+    image: nginx
+    ports:
+      - "41257:80"      
