@@ -4,10 +4,10 @@ services:
   influxdb:
     image: influxdb:latest
     container_name: influxdb
-    ports:
+    expose:
       # The API for InfluxDB is served on port 8086
-      - "${INFLUX_PORT_1}:8086"
-      - "${INFLUX_PORT_2}:8082"
+      - "8086"
+      - "8082"
     environment:
       - INFLUXDB_DB=otlink
       - INFLUXDB_USER=otlink
@@ -41,10 +41,10 @@ services:
   chronograf:
     image: chronograf:latest
     container_name: chronograf
-    ports:
+    expose:
       # The WebUI for Chronograf is served on port 8888
-      - ":8888"
-      - ":80"
+      - "8888"
+      - "80"
     environment:
       - INFLUXDB_URL=http://influxdb:8086
       - INFLUXDB_USERNAME=influxadmin
@@ -57,9 +57,9 @@ services:
   kapacitor:
     image: kapacitor:latest
     container_name: kapacitor
-    ports:
+    expose:
       # The WebUI for Chronograf is served on port 8888
-      - "${KAPACITOR_PORT_1}:9092"
+      - "9092"
     environment:
       - KAPACITOR_HOSTNAME=kapacitor
       - KAPACITOR_INFLUXDB_0_URLS_0=http://influxdb:8086
