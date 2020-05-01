@@ -64,3 +64,37 @@ services:
       - KAPACITOR_INFLUXDB_0_PASSWORD=${INFLUX_ADMIN_PASSWORD}
     depends_on:
       - influxdb
+      
+postgres:
+    image: postgres:9.6.5
+    container_name: postgres
+    restart: "${RESTART}"
+    environment:
+      - POSTGRES_DB=hydra
+      - POSTGRES_USER=hydrauser
+      - POSTGRES_PASSWORD=hydrapassword
+    ports:
+      - 5432:5432/tcp
+    volumes:
+      - postgres-vol:/var/lib/postgresql/data
+    network_mode: bridge
+
+    volumes:
+      postgres-vol:
+        driver: local
+  
+hydra:
+    image: oryd/hydra:1.4.8
+    container_name: hydra
+    environment:
+      - DSN=hydra
+      - SECRETS_SYSTEM=hydrasecret123456
+      - URLS_SELF_ISSUER=https://localhost:9000/
+      - URLS_CONSENT=http://localhost:9020/consent
+      - URLS_LOGIN=http://localhost:9020/login
+    ports:
+      - 9000:4444
+      - 9001:4445
+
+    
+    
