@@ -1,0 +1,79 @@
+[
+    {
+        "id": "5cfd8794.f7a558",
+        "type": "tab",
+        "label": "Influx TICK Config"
+    },
+    {
+        "id": "bbc3fbb4.52e568",
+        "type": "inject",
+        "z": "5cfd8794.f7a558",
+        "name": "copy telegraf config file from ftp",
+        "topic": "",
+        "payload": "cp /ftp-data/telegraf.conf  telegraf://etc/telegraf/telegraf.conf ",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "9d217ca7.f144f"
+            ]
+        ]
+    },
+    {
+        "id": "9d217ca7.f144f",
+        "type": "exec",
+        "z": "5cfd8794.f7a558",
+        "command": "docker",
+        "addpay": true,
+        "append": "",
+        "useSpawn": false,
+        "timer": "",
+        "name": "",
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [],
+            [
+                "b8000d3e.0d32e",
+                "7aa8b6ac.913388"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b8000d3e.0d32e",
+        "type": "exec",
+        "z": "5cfd8794.f7a558",
+        "command": "docker restart telegraf",
+        "addpay": false,
+        "append": "",
+        "useSpawn": false,
+        "timer": "",
+        "name": "",
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [],
+            [
+                "7aa8b6ac.913388"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7aa8b6ac.913388",
+        "type": "debug",
+        "z": "5cfd8794.f7a558",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 460,
+        "y": 40,
+        "wires": []
+    }
+]
