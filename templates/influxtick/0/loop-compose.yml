@@ -14,30 +14,42 @@
     label: 'Password:'
     required: true
     default: password
-    type: string    
+    type: string
+  - variable: INFLUXDB_PORT_1
+    description: 'Specify the external port that will be used to access InfluxDB.'
+    label: 'Port:'
+    required: true
+    default: 41250
+    type: int  
+  - variable: INFLUXDB_PORT_2
+    description: 'Specify the external port that will be used to access InfluxDB for IFQL queries.'
+    label: 'Port:'
+    required: true
+    default: 41251
+    type: int      
   - variable: CHRONOGRAF_PORT_1
     description: 'Specify the external port that will be used to access Chronograf.'
     label: 'Port:'
     required: true
-    default: 41251
+    default: 41252
     type: int    
   - variable: TELEGRAF_PORT_1
     description: 'Specify the external port for Telegraf TCP listener.'
     label: 'Port:'
     required: true
-    default: 41252
+    default: 41253
     type: int
   - variable: TELEGRAF_PORT_2
     description: 'Specify the external port for Telegraf UDP listener.'
     label: 'Port:'
     required: true
-    default: 41253
+    default: 41254
     type: int       
   - variable: TELEGRAF_PORT_3
     description: 'Specify the external port for Telegraf statsd UDP/TCP listener.'
     label: 'Port:'
     required: true
-    default: 41254
+    default: 41255
     type: int      
 
     
