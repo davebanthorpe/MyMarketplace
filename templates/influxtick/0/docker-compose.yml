@@ -44,6 +44,7 @@ services:
     ports:
       # The WebUI for Chronograf is served on port 8888
       - "${CHRONOGRAF_PORT_1}:8888"
+    expose:
       - "80"
     environment:
       - INFLUXDB_URL=http://influxdb:8086
