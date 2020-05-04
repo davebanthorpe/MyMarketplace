@@ -15,7 +15,7 @@
     required: true
     default: password
     type: string    
-  - variable: NGINX_PORT_1
+  - variable: CHRONOGRAF_PORT_1
     description: 'Specify the external port that will be used to access Chronograf.'
     label: 'Port:'
     required: true
